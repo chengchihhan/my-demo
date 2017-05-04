@@ -1,18 +1,18 @@
 import React from 'react';
 
-class SearchBar extends React.component {
+class SearchBar extends React.Component {
   render() {
     return (
       <form>
         <input type="text" placeholder="Search..." />
         <p>
-          <input type="checkbox"/>
+          <input type="checkbox" />
           {' '}
           Only show Best Sellers
         </p>
       </form>
-    )
+    );
   }
 }
 
-export SearchBar;
+export default SearchBar;
