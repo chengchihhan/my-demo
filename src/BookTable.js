@@ -1,11 +1,30 @@
 import React from 'react';
+import BookRow from './BookRow';
+import BookCategoryRow from './BookCategoryRow';
 
-class BookRow extends React.component {
+class BookTable extends React.component {
   render() {
+    const rows = [];
+    let lastCategory = null;
+    this.props.books.forEach(function(book) {
+      if (book.category !== lastCategory) {
+        rows.push(<BookCategoryRow category={book.category} />);
+      }
+      rows.push(<BookRow name={book.name} price={book.price} popular={book.popular} />)
+    })
     return (
-      <div></div>
-    )
+      <table>
+        <thead>
+          <tr>Name</tr>
+          <tr>Price</tr>
+          <tr>Status</tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    );
   }
 }
 
-export BookRow;
+export BookTable;
