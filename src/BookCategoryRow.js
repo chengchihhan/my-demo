@@ -1,11 +1,11 @@
 import React from 'react';
 
-class BookRow extends React.component {
+class BookCategoryRow extends React.component {
   render() {
     return (
-      <div></div>
+      <tr><th>{this.props.category}</th></tr>
     )
   }
 }
 
-export BookRow;
+export BookCategoryRow;
