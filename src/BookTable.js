@@ -10,7 +10,7 @@ class BookTable extends React.Component {
       if (book.category !== lastCategory) {
         rows.push(<BookCategoryRow key={book.category} category={book.category} />);
       }
-      rows.push(<BookRow key={book.name} name={book.name} price={book.price} popular={book.popular} />)
+      rows.push(<BookRow key={book.name} book={book} />)
       lastCategory = book.category;
     })
     return (
