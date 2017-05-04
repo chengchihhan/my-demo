@@ -8,16 +8,19 @@ class BookTable extends React.Component {
     let lastCategory = null;
     this.props.books.forEach(function(book) {
       if (book.category !== lastCategory) {
-        rows.push(<BookCategoryRow category={book.category} />);
+        rows.push(<BookCategoryRow key={book.category} category={book.category} />);
       }
-      rows.push(<BookRow name={book.name} price={book.price} popular={book.popular} />)
+      rows.push(<BookRow key={book.name} name={book.name} price={book.price} popular={book.popular} />)
+      lastCategory = book.category;
     })
     return (
       <table>
         <thead>
-          <tr>Name</tr>
-          <tr>Price</tr>
-          <tr>Status</tr>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
         </thead>
         <tbody>
           {rows}
