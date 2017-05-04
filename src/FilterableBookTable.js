@@ -1,11 +1,16 @@
 import React from 'react';
+import SearchBar from './SearchBar';
+import BookTable from './BookTable';
 
-class BookRow extends React.component {
+class FilterableBookTable extends React.component {
   render() {
     return (
-      <div></div>
+      <div>
+        <SearchBar />
+        <BookTable books={this.props.books} />
+      </div>
     )
   }
 }
 
-export BookRow;
+export default FilterableBookTable;
