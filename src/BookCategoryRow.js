@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BookCategoryRow extends React.component {
+class BookCategoryRow extends React.Component {
   render() {
     return (
       <tr><th>{this.props.category}</th></tr>
@@ -8,4 +8,4 @@ class BookCategoryRow extends React.component {
   }
 }
 
-export BookCategoryRow;
+export default BookCategoryRow;
