@@ -2,7 +2,7 @@ import React from 'react';
 import BookRow from './BookRow';
 import BookCategoryRow from './BookCategoryRow';
 
-class BookTable extends React.component {
+class BookTable extends React.Component {
   render() {
     const rows = [];
     let lastCategory = null;
@@ -27,4 +27,4 @@ class BookTable extends React.component {
   }
 }
 
-export BookTable;
+export  default BookTable;
