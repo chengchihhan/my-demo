@@ -1,4 +1,5 @@
 import React from 'react';
+import FilterableBookTable from './FilterableBookTable';
 
 class App extends React.Component {
   render() {
@@ -11,8 +12,7 @@ class App extends React.Component {
       {category: 'Science Fiction Adventures', price: '$19.99', stocked: true, name: 'Battlefront II: Inferno Squad (Star Wars)', popular: true}
     ];
     return (
-      <div className="App">
-      </div>
+      <FilterableBookTable books={BOOKS} />
     );
   }
 }
