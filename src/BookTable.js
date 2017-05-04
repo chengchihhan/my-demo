@@ -20,6 +20,7 @@ class BookTable extends React.Component {
             <th>Name</th>
             <th>Price</th>
             <th>Status</th>
+            <th>Stock</th>
           </tr>
         </thead>
         <tbody>
