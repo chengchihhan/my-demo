@@ -1,10 +1,10 @@
 import React from 'react';
 
-class BookRow extends React.component {
+class BookRow extends React.Component {
   render() {
     let popular = this.props.book.popular ?
-      <span style={{color: red}}>Hot</span> :
-      <span style={{color: blue}}>New</span>
+      <span style={{color: 'red'}}>Hot</span> :
+      <span style={{color: 'blue'}}>New</span>
     return (
       <tr>
         <td>{this.props.book.name}</td>
@@ -15,4 +15,4 @@ class BookRow extends React.component {
   }
 }
 
-export BookRow;
+export default BookRow;
