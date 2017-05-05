@@ -6,7 +6,10 @@ class BookTable extends React.Component {
   render() {
     const rows = [];
     let lastCategory = null;
-    this.props.books.forEach(function(book) {
+    this.props.books.forEach((book) => {
+      if (book.name.indexOf(this.props.filterInputText) === -1 || (!book.popular && this.props.bestSellerOnly)) {
+        return;
+      }
       if (book.category !== lastCategory) {
         rows.push(<BookCategoryRow key={book.category} category={book.category} />);
       }
