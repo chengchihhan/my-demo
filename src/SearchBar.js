@@ -4,9 +4,16 @@ class SearchBar extends React.Component {
   render() {
     return (
       <form>
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          value={this.props.filterInputText}
+        />
         <p>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            value={this.props.bestSellerOnly}
+          />
           {' '}
           Only show Best Sellers
         </p>
