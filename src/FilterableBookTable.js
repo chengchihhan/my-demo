@@ -6,7 +6,7 @@ class FilterableBookTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterInputText: '',
+      filterText: '',
       bestSellerOnly: false
     }
   }
@@ -14,12 +14,12 @@ class FilterableBookTable extends React.Component {
     return (
       <div>
         <SearchBar
-          filterInputText={this.state.filterInputText}
+          filterText={this.state.filterText}
           bestSellerOnly={this.state.bestSellerOnly}
         />
         <BookTable
           books={this.props.books}
-          filterInputText={this.state.filterInputText}
+          filterText={this.state.filterText}
           bestSellerOnly={this.state.bestSellerOnly}
         />
       </div>

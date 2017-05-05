@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
         <input
           type="text"
           placeholder="Search..."
-          value={this.props.filterInputText}
+          value={this.props.filterText}
         />
         <p>
           <input
