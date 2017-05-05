@@ -1,21 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
+
 import BookRow from './BookRow';
 import BookCategoryRow from './BookCategoryRow';
 
-class BookTable extends React.Component {
-  render() {
-    const rows = [];
-    let lastCategory = null;
-    this.props.books.forEach((book) => {
-      if (book.name.indexOf(this.props.filterText) === -1 || (!book.popular && this.props.bestSellerOnly)) {
-        return;
-      }
-      if (book.category !== lastCategory) {
-        rows.push(<BookCategoryRow key={book.category} category={book.category} />);
-      }
-      rows.push(<BookRow key={book.name} book={book} />)
-      lastCategory = book.category;
+export default class BookTable extends Component {
+
+  renderCategories(data) {
+    return Object.keys(data).map((category) => {
+      const books = data[category].map((book) => (<BookRow key={book.name} book={book} />));
+      return [
+        <BookCategoryRow key={category} category={category} />,
+        ...books
+      ];
+    });
+  }
+
+  renderTableBody() {
+
+    const {books, filterText, bestSellerOnly} = this.props;
+
+    const categoryData = books.filter((book) => {
+      return book.name.includes(filterText) || ((! book.popular) && bestSellerOnly);
     })
+    .reduce((data, book) => {
+
+      const {category} = book;
+
+      if (! data[category]) {
+        data[category] = [];
+      }
+      data[category].push(book);
+      return data;
+    }, {});
+
+    return this.renderCategories(categoryData);
+  }
+
+  render() {
     return (
       <table>
         <thead>
@@ -26,12 +47,8 @@ class BookTable extends React.Component {
             <th>Stock</th>
           </tr>
         </thead>
-        <tbody>
-          {rows}
-        </tbody>
+        <tbody>{this.renderTableBody()}</tbody>
       </table>
     );
   }
 }
-
-export  default BookTable;
