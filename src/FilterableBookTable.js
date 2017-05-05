@@ -15,10 +15,10 @@ class FilterableBookTable extends React.Component {
   }
 
   handleFilterTextInput(filterText) {
-      this.setState({
-        filterText
-      })
-    }
+    this.setState({
+      filterText
+    })
+  }
 
   handleBestSellerOnlyInput(bestSellerOnly) {
     this.setState({
