@@ -38,8 +38,6 @@ class FilterableBookTable extends React.Component {
           books={this.props.books}
           filterText={this.state.filterText}
           bestSellerOnly={this.state.bestSellerOnly}
-          onFilterTextInput={this.handleFilterTextInput}
-          onBestSellerOnlyInput={this.handleBestSellerOnlyInput}
         />
       </div>
     )
