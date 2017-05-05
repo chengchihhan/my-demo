@@ -8,7 +8,22 @@ class FilterableBookTable extends React.Component {
     this.state = {
       filterText: '',
       bestSellerOnly: false
+    };
+
+    this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
+    this.handleBestSellerOnlyInput = this.handleBestSellerOnlyInput.bind(this);
+  }
+
+  handleFilterTextInput(filterText) {
+      this.setState({
+        filterText
+      })
     }
+
+  handleBestSellerOnlyInput(bestSellerOnly) {
+    this.setState({
+      bestSellerOnly
+    })
   }
   render() {
     return (
@@ -16,11 +31,15 @@ class FilterableBookTable extends React.Component {
         <SearchBar
           filterText={this.state.filterText}
           bestSellerOnly={this.state.bestSellerOnly}
+          onFilterTextInput={this.handleFilterTextInput}
+          onBestSellerOnlyInput={this.handleBestSellerOnlyInput}
         />
         <BookTable
           books={this.props.books}
           filterText={this.state.filterText}
           bestSellerOnly={this.state.bestSellerOnly}
+          onFilterTextInput={this.handleFilterTextInput}
+          onBestSellerOnlyInput={this.handleBestSellerOnlyInput}
         />
       </div>
     )
