@@ -11,7 +11,7 @@ class SearchBar extends React.Component {
     this.props.onFilterTextInput(e.target.value);
   }
   handleBestSellerOnlyInputChange(e) {
-    this.props.onBestSellerOnlyInput(e.target.value);
+    this.props.onBestSellerOnlyInput(e.target.checked);
   }
   render() {
     return (
@@ -25,8 +25,8 @@ class SearchBar extends React.Component {
         <p>
           <input
             type="checkbox"
-            value={this.props.bestSellerOnly}
-            onChange={this.props.handleBestSellerOnlyInputChange}
+            checked={this.props.bestSellerOnly}
+            onChange={this.handleBestSellerOnlyInputChange}
           />
           {' '}
           Only show Best Sellers
