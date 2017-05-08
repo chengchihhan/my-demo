@@ -20,7 +20,13 @@ export default class BookTable extends Component {
     const {books, filterText, bestSellerOnly} = this.props;
 
     const categoryData = books.filter((book) => {
-      return book.name.includes(filterText) || ((! book.popular) && bestSellerOnly);
+      return book.name.includes(filterText);
+    })
+    .filter((book) => {
+      if (! bestSellerOnly) {
+        return true;
+      }
+      return (book.popular === bestSellerOnly);
     })
     .reduce((data, book) => {
 
