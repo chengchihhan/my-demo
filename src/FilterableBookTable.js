@@ -9,22 +9,20 @@ class FilterableBookTable extends React.Component {
       filterText: '',
       bestSellerOnly: false
     };
-
-    this.handleFilterTextInput = this.handleFilterTextInput.bind(this);
-    this.handleBestSellerOnlyInput = this.handleBestSellerOnlyInput.bind(this);
   }
 
-  handleFilterTextInput(filterText) {
+  handleFilterTextInput = (filterText) => {
     this.setState({
       filterText
-    })
+    });
   }
 
-  handleBestSellerOnlyInput(bestSellerOnly) {
+  handleBestSellerOnlyInput = (bestSellerOnly) => {
     this.setState({
       bestSellerOnly
-    })
+    });
   }
+
   render() {
     return (
       <div>
