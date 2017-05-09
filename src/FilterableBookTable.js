@@ -26,17 +26,11 @@ class FilterableBookTable extends React.Component {
   render() {
     return (
       <div>
-        <SearchBar
-          filterText={this.state.filterText}
-          bestSellerOnly={this.state.bestSellerOnly}
+        <SearchBar filterText={this.state.filterText} bestSellerOnly={this.state.bestSellerOnly}
           onFilterTextInput={this.handleFilterTextInput}
-          onBestSellerOnlyInput={this.handleBestSellerOnlyInput}
-        />
-        <BookTable
-          books={this.props.books}
-          filterText={this.state.filterText}
-          bestSellerOnly={this.state.bestSellerOnly}
-        />
+          onBestSellerOnlyInput={this.handleBestSellerOnlyInput} />
+        <BookTable books={this.props.books} filterText={this.state.filterText}
+          bestSellerOnly={this.state.bestSellerOnly} />
       </div>
     )
   }
